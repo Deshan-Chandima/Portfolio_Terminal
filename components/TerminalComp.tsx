@@ -1288,6 +1288,15 @@ export default function Terminal({
         el.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
         return;
       }
+      const lastPromptIndex = history.map(l => l.type).lastIndexOf("prompt");
+      if (lastPromptIndex >= 0) {
+        const promptEl = el.querySelector(`#history-${lastPromptIndex}`);
+        if (promptEl) {
+          const top = (promptEl as HTMLElement).offsetTop - 16;
+          el.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+          return;
+        }
+      }
       el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
     });
     return () => cancelAnimationFrame(id);
@@ -1336,7 +1345,7 @@ export default function Terminal({
         aria-atomic="false"
       >
         {history.map((line, i) => (
-          <div key={i} className="history-line">
+          <div key={i} id={`history-${i}`} className="history-line">
             {line.type === "prompt" ? (
               <div>
                 <Prompt user={user} host={host} cwd={cwd} />
