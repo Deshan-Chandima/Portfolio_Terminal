@@ -77,7 +77,7 @@ ${keywordMeta}
     <lastBuildDate>${latest}</lastBuildDate>
     <generator>Next.js — github.com/Deshan-Chandima</generator>
     <image>
-      <url>${escapeXml(`${SITE_URL}/images/logo.jpg`)}</url>
+      <url>${escapeXml(`${SITE_URL}/images/Mirror.JPG`)}</url>
       <title>${escapeXml(SITE_NAME)} Blog</title>
       <link>${BLOG_CANONICAL}</link>
     </image>

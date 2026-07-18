@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "https://www.github.com/Deshan-Chandima/images/logo.jpg",
+        url: "https://www.github.com/Deshan-Chandima/images/Mirror.JPG",
         width: 1200,
         height: 630,
         alt: "Deshan Chandima — Junior Software Developer (Lead AI Engineer) experience",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: "Experience | Junior Software Developer (Lead AI Engineer) @ CHATI · FreeSWITCH + WebRTC",
     description:
       "Junior Software Developer (Lead AI Engineer) at CHATI — B2B AI Voice Calling SaaS on FreeSWITCH + WebRTC. Part-time at Prominds Digital — AutoPulse B2B CRM.",
-    images: ["https://www.github.com/Deshan-Chandima/images/logo.jpg"],
+    images: ["https://www.github.com/Deshan-Chandima/images/Mirror.JPG"],
   },
   robots: {
     index: true,
@@ -106,7 +106,7 @@ function buildStructuredData() {
     name: AUTHOR_NAME,
     url: SITE_URL,
     mainEntityOfPage: `${SITE_URL}/experience`,
-    image: `${SITE_URL}/images/logo.jpg`,
+    image: `${SITE_URL}/images/Mirror.JPG`,
     jobTitle: "Junior Software Developer (Lead AI Engineer)",
     hasOccupation: [
       {

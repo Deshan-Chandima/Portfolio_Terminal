@@ -23,8 +23,8 @@ export const metadata: Metadata = {
       : "https://www.github.com/Deshan-Chandima")
   ),
   icons: {
-    icon: "/images/logo.jpg",
-    apple: "/images/logo.jpg",
+    icon: "/images/Mirror.JPG",
+    apple: "/images/Mirror.JPG",
   },
   title: {
     default:
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
       "Software Developer specializing in backend development, RESTful APIs, and Machine Learning. Based in Bhubaneswar, Odisha, India.",
     images: [
       {
-        url: "/images/logo.jpg",
+        url: "/images/Mirror.JPG",
         width: 1200,
         height: 630,
         alt: "Deshan Chandima - Software Developer",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     title: "Deshan Chandima | Software Developer",
     description:
       "Software Developer with backend focus, building RESTful APIs and full-stack applications. Learning Machine Learning.",
-    images: ["/images/logo.jpg"],
+    images: ["/images/Mirror.JPG"],
   },
   robots: {
     index: true,
@@ -128,7 +128,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="application-name" content="Deshan Chandima - Developer" />
         <meta name="apple-mobile-web-app-title" content="Deshan Dev" />
-        <link rel="icon" href="/images/logo.jpg" />
+        <link rel="icon" href="/images/Mirror.JPG" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="canonical" href="https://www.github.com/Deshan-Chandima" />
         <link

@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "https://www.github.com/Deshan-Chandima/images/logo.jpg",
+        url: "https://www.github.com/Deshan-Chandima/images/Mirror.JPG",
         width: 1200,
         height: 630,
         alt: "Deshan Chandima - Software Developer & Machine Learning Enthusiast",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "About Me | Software Developer & Machine Learning Enthusiast",
     description:
       "Full-stack MERN developer from Bhubaneswar, India focused on backend development and machine learning. Pursuing BCA at Amity University.",
-    images: ["https://www.github.com/Deshan-Chandima/images/logo.jpg"],
+    images: ["https://www.github.com/Deshan-Chandima/images/Mirror.JPG"],
   },
   robots: {
     index: true,
@@ -131,7 +131,7 @@ const structuredData = {
   familyName: "Pradhan",
   url: "https://www.github.com/Deshan-Chandima",
   mainEntityOfPage: "https://www.github.com/Deshan-Chandima/about",
-  image: "https://www.github.com/Deshan-Chandima/images/logo.jpg",
+  image: "https://www.github.com/Deshan-Chandima/images/Mirror.JPG",
   email: "mailto:deshan.c163@gmail.com",
   jobTitle: "Junior Software Developer",
   description:
@@ -224,7 +224,7 @@ const aboutPageStructuredData = {
   mainEntity: { "@id": "https://www.github.com/Deshan-Chandima/#person" },
   author: { "@id": "https://www.github.com/Deshan-Chandima/#person" },
   about: { "@id": "https://www.github.com/Deshan-Chandima/#person" },
-  primaryImageOfPage: "https://www.github.com/Deshan-Chandima/images/logo.jpg",
+  primaryImageOfPage: "https://www.github.com/Deshan-Chandima/images/Mirror.JPG",
   isPartOf: { "@id": "https://www.github.com/Deshan-Chandima/#website" },
   breadcrumb: {
     "@id": "https://www.github.com/Deshan-Chandima/about#breadcrumb",

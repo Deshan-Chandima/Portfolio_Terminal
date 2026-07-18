@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "https://www.github.com/Deshan-Chandima/images/logo.jpg",
+        url: "https://www.github.com/Deshan-Chandima/images/Mirror.JPG",
         width: 1200,
         height: 630,
         alt: "Deshan Chandima - Software Developer Projects Portfolio",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "Projects | Software Developer Portfolio",
     description:
       "Full-stack MERN projects, AI applications, and machine learning implementations. All projects open-source on GitHub.",
-    images: ["https://www.github.com/Deshan-Chandima/images/logo.jpg"],
+    images: ["https://www.github.com/Deshan-Chandima/images/Mirror.JPG"],
   },
   robots: {
     index: true,
