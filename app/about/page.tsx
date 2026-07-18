@@ -313,32 +313,19 @@ export default function About() {
 
               <div>
                 <p>
-                  I&apos;m a <strong>Junior Software Developer</strong> at
-                  CHATI, working on AI-powered calling software built on{" "}
-                  <strong>WebRTC</strong> and the <strong>SIP</strong> protocol
-                  — real-time voice flows, media negotiation, signaling, and
-                  integrating the AI agent into live calls. Backend-focused
-                  full-stack engineer: reliable RESTful APIs and full‑stack
-                  applications on MongoDB, Express.js, React, Node.js, Next.js,
-                  and TypeScript, with JWT auth and responsive UIs in Tailwind.
-                  Strong on data modeling (Mongoose), media handling
-                  (Cloudinary), and pragmatic tooling (Git, Docker, Postman).
-                  Also part-time at Prominds Digital as Full Stack / WordPress
-                  developer. Comfortable augmenting products with AI/ML
-                  libraries (TensorFlow, NumPy, pandas) and shipping to
-                  Vercel/Render. Pursuing BCA at Amity University (CGPA 8.93).
+                  I&apos;m a <strong>Fullstack Web Developer</strong> with a strong growing interest in working with data. I build complete web apps using React, Node.js, and Express, and I mainly use <strong>MySQL</strong> to handle and store backend data safely. For the frontend, I use Tailwind CSS to make sure everything looks great on any screen. Right now, I am putting a big focus on studying <strong>Data Analysis</strong> and <strong>Data Engineering</strong>, learning how to understand data, pull useful insights, and build smooth data pipelines. I am fully comfortable handling the deployment side too, using <strong>cPanel</strong> for server hosting, <strong>Vercel</strong> and <strong>Render</strong> for launching apps, and <strong>Git/GitHub</strong> for managing code versions. I focus on writing clean code and always try to learn new things while studying as a Software Engineering undergraduate.
                 </p>
 
                 <div role="list" aria-label="Technical skills">
                   {[
-                    "WebRTC",
-                    "SIP",
-                    "Node.js",
-                    "TypeScript",
-                    "Next.js",
-                    "MongoDB",
-                    "Express",
                     "React",
+                    "Node.js",
+                    "Express",
+                    "MySQL",
+                    "Data Analysis",
+                    "Data Engineering",
+                    "Tailwind CSS",
+                    "Git/GitHub",
                   ].map((tech) => (
                     <span key={tech} role="listitem">
                       {tech}
@@ -367,22 +354,17 @@ export default function About() {
                 >
                   <div>
                     <h3 id="amity-heading" itemProp="name">
-                      Amity University
+                      SLIIT City University
                     </h3>
-                    <time dateTime="2024/2027" itemProp="temporalCoverage">
-                      2024 — 2027
+                    <time dateTime="2023/Present" itemProp="temporalCoverage">
+                      2023 — Present
                     </time>
                   </div>
                   <p itemProp="description">
-                    Pursuing Bachelor of Computer Application (BCA) with strong
-                    academic performance.
+                    Doing my BSc in Software Engineering. I am studying topics like advanced databases (SQL), data structures, system architecture, and QA.
                   </p>
-                  <div>
-                    <span itemProp="credentialCategory">CGPA: 8.93</span>
-                  </div>
                 </article>
 
-                {/* Autonomous College Khariar */}
                 <article
                   aria-labelledby="ack-heading"
                   itemScope
@@ -390,19 +372,17 @@ export default function About() {
                 >
                   <div>
                     <h3 id="ack-heading" itemProp="name">
-                      Autonomous College Khariar
+                      Simplilearn SkillUP
                     </h3>
-                    <time dateTime="2022/2024" itemProp="temporalCoverage">
-                      2022 — 2024
+                    <time dateTime="2026-07" itemProp="temporalCoverage">
+                      July 2026
                     </time>
                   </div>
                   <p itemProp="description">
-                    Completed higher secondary education (11th and 12th grade)
-                    specializing in Information Technology.
+                    Completed the &quot;Introduction to Data Science&quot; course to learn the basics of working with data.
                   </p>
                 </article>
 
-                {/* High School */}
                 <article
                   aria-labelledby="highschool-heading"
                   itemScope
@@ -410,15 +390,14 @@ export default function About() {
                 >
                   <div>
                     <h3 id="highschool-heading" itemProp="name">
-                      High School
+                      Simplilearn SkillUP
                     </h3>
-                    <time dateTime="2009/2022" itemProp="temporalCoverage">
-                      2009 — 2022
+                    <time dateTime="2026-07" itemProp="temporalCoverage">
+                      July 2026
                     </time>
                   </div>
                   <p itemProp="description">
-                    Completed primary and secondary education, building
-                    foundational knowledge.
+                    Completed the &quot;Introduction to Data Analytics&quot; course to grow my skills in understanding and analyzing data.
                   </p>
                 </article>
               </div>
@@ -437,27 +416,19 @@ export default function About() {
                   <div>
                     <CodeIcon />
                   </div>
-                  <h3>Junior Software Developer @ CHATI</h3>
+                  <h3>Co-Founder @ Syntechcraft</h3>
                   <p>
-                    Working on AI-powered calling software, building real-time
-                    voice flows on top of <strong>WebRTC</strong> and the{" "}
-                    <strong>SIP</strong> protocol. Day-to-day is hands-on with
-                    media negotiation, signaling, and integrating the AI agent
-                    into the live call pipeline.
+                    Running a software startup with my co-founders. I build fullstack web apps for clients using <strong>React</strong>, <strong>Node.js</strong>, and <strong>MySQL</strong>. We work together to get our projects live using tools like <strong>cPanel</strong>, <strong>Vercel</strong>, and <strong>Render</strong>.
                   </p>
                 </article>
 
-                {/* System Design & Automation */}
                 <article>
                   <div>
                     <SystemIcon />
                   </div>
-                  <h3>System Design &amp; Automation</h3>
+                  <h3>Data Engineering &amp; Analysis</h3>
                   <p>
-                    Studying <strong>system design</strong> and architecture
-                    patterns, refactoring older projects to apply what I learn,
-                    and building small automation tools to remove repetitive
-                    work from my day-to-day flow.
+                    Studying as a Software Engineering undergraduate with a big focus on data. I am learning how to build smooth data pipelines and understand complex data. My goal is to combine these <strong>data skills</strong> with my <strong>fullstack web development</strong> experience.
                   </p>
                 </article>
               </div>

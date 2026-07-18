@@ -660,7 +660,7 @@ export default function Terminal({
   const [blogPostsCache, setBlogPostsCache] = useState<BlogSearchPost[]>([]);
 
   const user = "deshan";
-  const host = "ruki";
+  const host = "portfolio";
 
   useEffect(() => {
     let cancelled = false;
@@ -1158,20 +1158,19 @@ export default function Terminal({
     await processCommand(commandToRun);
   };
 
-  const focusInput = (): void => {
+  const focusInput = (e?: React.MouseEvent | React.FocusEvent): void => {
+    // If the user has selected text, let them copy it without yanking focus
+    if (typeof window !== 'undefined' && window.getSelection()?.toString()) {
+      return;
+    }
+
     const isTouchDevice =
       "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
     if (inputRef.current && !isTouchDevice) {
-      inputRef.current.focus();
+      // Focus without scrolling the page abruptly
+      inputRef.current.focus({ preventScroll: true });
     }
-
-    setTimeout(() => {
-      terminalRef.current?.scrollTo({
-        top: terminalRef.current.scrollHeight,
-        behavior: "smooth",
-      });
-    }, 300);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {

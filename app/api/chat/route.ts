@@ -6,7 +6,7 @@ const modelId = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
 const genAI = new GoogleGenerativeAI(apiKey || "");
 
 const CONTEXT_PARTS = {
-  base: `You are Deshan Chandima's AI assistant on his portfolio terminal. CRITICAL: Reply in 2–3 short sentences only. Never write long paragraphs or list everything—give a direct, brief answer to what was asked. Deshan is a Software Developer (backend focus): RESTful APIs, MERN/TypeScript, JWT, Cloudinary, Vercel/Render; exploring AI/ML. Based in Bhubaneswar, India.`,
+  base: `You are Deshan Chandima's AI assistant on his portfolio terminal. CRITICAL: Reply in 2–3 short sentences only. Never write long paragraphs or list everything—give a direct, brief answer to what was asked. Deshan is a Fullstack Web Developer focused on building web apps with React, Node.js, Express, and MySQL, with a strong growing interest in Data Analysis and Data Engineering. Based in Bhubaneswar, India.`,
 
   skills: `Tech: Languages — JavaScript, TypeScript, Python, C++, HTML5, CSS3. Frontend — React, Next.js, Remix, TanStack Query, Tailwind CSS, EJS, Vite. Backend — Node.js, Express.js, FastAPI, REST APIs, OAuth 2.0, JWT. Databases — MongoDB, RabbitMQ, Redis, PostgreSQL, VectorDB. Tools — Git & GitHub, Docker, Kubernetes, Postman, Linux/CLI, Claude Code, OpenCode, Ubuntu, Arch Linux. Deployment — AWS S3, Azure, GCP, Vercel, Render, Dokploy. AI/ML — Pandas, NumPy, PyTorch, TensorFlow, RAG, Tool Calling, MCP.`,
 
@@ -16,7 +16,7 @@ const CONTEXT_PARTS = {
 
   contact: `Contact: Email deshan.c163@gmail.com. LinkedIn linkedin.com/in/DeshanChandima. GitHub github.com/Deshan-Chandima. Twitter/X x.com/DeshanChandima. Instagram instagram.com/github.com/Deshan-Chandima. YouTube youtube.com/@morscode7. LeetCode leetcode.com/u/DeshanChandima. Resume: docs.google.com/document/d/17j42jMRIdxD2HG9eWuUKHr0StgfkClw0 (also linked on contact page). Location: Bhubaneswar, Odisha, India.`,
 
-  education: `Education: BCA at Amity University (2024–2027, CGPA 8.93). Higher secondary (11th & 12th, I.T.) at Autonomous College Khariar (2022–2024). Schooling from village school (2009–2022).`,
+  education: `Education: BSc in Software Engineering at SLIIT City University (2023–Present). Completed Introduction to Data Science (July 2026) and Introduction to Data Analytics (July 2026) at Simplilearn SkillUP.`,
 };
 
 function getRelevantContext(question: string): string {

@@ -86,29 +86,34 @@ const About: React.FC = () => {
               <p className="text-gray-300 leading-relaxed text-sm sm:text-base font-light">
                 I&apos;m a{" "}
                 <span className="text-green-400 font-semibold">
-                  Software Developer
+                  Fullstack Web Developer
                 </span>{" "}
-                with a backend focus, building reliable RESTful APIs and
-                full‑stack applications using MongoDB, Express.js, React,
-                Node.js, and TypeScript, with JWT‑based auth and responsive
-                interfaces in React, Tailwind, HTML/CSS, and EJS. Strong in data
-                modeling with Mongoose, media handling via Cloudinary
-                integration (storage/CDN, not a database), and pragmatic tooling
-                across Git/GitHub, Docker, Postman, and API testing for robust
-                delivery.​ Comfortable augmeting products with AI/ML libraries
-                (TensorFlow, NumPy, pandas) and shipping to Vercel/Render,
-                guided by a build‑to‑learn mindset and ongoing BCA studies (CGPA
-                8.93)..
+                with a strong growing interest in working with data. I build complete web apps using{" "}
+                <span className="text-green-400 font-semibold">React</span>,{" "}
+                <span className="text-green-400 font-semibold">Node.js</span>, and{" "}
+                <span className="text-green-400 font-semibold">Express</span>, and I mainly use{" "}
+                <span className="text-green-400 font-semibold">MySQL</span>{" "}
+                to handle and store backend data safely. For the frontend, I use{" "}
+                <span className="text-green-400 font-semibold">Tailwind CSS</span>{" "}
+                to make sure everything looks great on any screen. Right now, I am putting a big focus on studying{" "}
+                <span className="text-green-400 font-semibold">Data Analysis</span> and{" "}
+                <span className="text-green-400 font-semibold">Data Engineering</span>,{" "}
+                learning how to understand data, pull useful insights, and build smooth data pipelines. I am fully comfortable handling the deployment side too, using{" "}
+                <span className="text-green-400 font-semibold">cPanel</span> for server hosting,{" "}
+                <span className="text-green-400 font-semibold">Vercel</span> and{" "}
+                <span className="text-green-400 font-semibold">Render</span> for launching apps, and{" "}
+                <span className="text-green-400 font-semibold">Git/GitHub</span> for managing code versions. I focus on writing clean code and always try to learn new things while studying as a{" "}
+                <span className="text-green-400 font-semibold">Software Engineering</span> undergraduate.
               </p>
 
               <div className="mt-4 sm:mt-6 flex flex-wrap gap-2">
                 {[
-                  "MongoDB",
-                  "Express",
                   "React",
                   "Node.js",
-                  "JavaScript",
-                  "TypeScript",
+                  "Express",
+                  "MySQL",
+                  "Data Analysis",
+                  "Data Engineering",
                 ].map((tech) => (
                   <span
                     key={tech}
@@ -134,53 +139,48 @@ const About: React.FC = () => {
             </div>
 
             <div className="ml-3 sm:ml-6 border-l-2 border-green-800/30 pl-3 sm:pl-6 space-y-6">
-              {/* Amity University */}
+              {/* SLIIT City University */}
               <div className="border-b border-green-800/20 pb-4">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                   <h3 className="text-green-400 font-semibold text-base sm:text-lg font-mono">
-                    Amity University
+                    SLIIT City University
                   </h3>
                   <span className="text-gray-400 text-sm font-mono">
-                    2024 — 2027
+                    2023 — Present
                   </span>
                 </div>
                 <p className="text-gray-300 text-sm sm:text-base">
-                  Doing my Bachelors of Computer Application (BCA).
+                  Doing my BSc in Software Engineering. I am studying topics like advanced databases (SQL), data structures, system architecture, and QA.
                 </p>
-                <div className="mt-2">
-                  <span className="px-2 py-1 bg-green-900/30 border border-green-800/50 rounded-full text-green-400 text-xs font-mono">
-                    CGPA: 8.93
-                  </span>
-                </div>
               </div>
 
-              {/* Autonomous College Khariar */}
+              {/* Simplilearn 1 */}
               <div className="border-b border-green-800/20 pb-4">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                   <h3 className="text-green-400 font-semibold text-base sm:text-lg font-mono">
-                    Autonomous College Khariar
+                    Simplilearn SkillUP
                   </h3>
                   <span className="text-gray-400 text-sm font-mono">
-                    2022 — 2024
+                    July 2026
                   </span>
                 </div>
                 <p className="text-gray-300 text-sm sm:text-base">
-                  I did my 11th and 12th in I.T.
+                  Completed the &quot;Introduction to Data Science&quot; course to learn the basics of working with data.
                 </p>
               </div>
 
-              {/* High School */}
+              {/* Simplilearn 2 */}
               <div>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                   <h3 className="text-green-400 font-semibold text-base sm:text-lg font-mono">
-                    High School
+                    Simplilearn SkillUP
                   </h3>
                   <span className="text-gray-400 text-sm font-mono">
-                    2009 — 2022
+                    July 2026
                   </span>
                 </div>
                 <p className="text-gray-300 text-sm sm:text-base">
-                  I did my schooling from our village school.
+                  Completed the &quot;Introduction to Data Analytics&quot; course to grow my skills in understanding and analyzing data.
                 </p>
               </div>
             </div>
@@ -209,21 +209,21 @@ const About: React.FC = () => {
                     <CodeIcon />
                   </div>
                   <h3 className="font-bold text-green-400 text-base sm:text-lg mb-2 font-mono">
-                    Junior Software Developer @ CHATI
+                    Co-Founder @ Syntechcraft
                   </h3>
                   <p className="text-gray-400 text-sm sm:text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                    Working on AI-powered calling software, building real-time
-                    voice flows on top of{" "}
-                    <span className="text-green-400 font-semibold">WebRTC</span>{" "}
-                    and{" "}
-                    <span className="text-green-400 font-semibold">SIP</span>{" "}
-                    protocols. Hands-on with media negotiation, signaling, and
-                    integrating the AI agent into the live call pipeline.
+                    Running a software startup with my co-founders. I build fullstack web apps for clients using{" "}
+                    <span className="text-green-400 font-semibold">React</span>,{" "}
+                    <span className="text-green-400 font-semibold">Node.js</span>, and{" "}
+                    <span className="text-green-400 font-semibold">MySQL</span>. We work together to get our projects live using tools like{" "}
+                    <span className="text-green-400 font-semibold">cPanel</span>,{" "}
+                    <span className="text-green-400 font-semibold">Vercel</span>, and{" "}
+                    <span className="text-green-400 font-semibold">Render</span>.
                   </p>
                 </div>
               </div>
 
-              {/* System design + automation card */}
+              {/* Data Engineering card */}
               <div className="group border border-green-800/40 bg-gradient-to-br from-green-900/20 to-black/80 backdrop-blur-sm p-3 sm:p-5 rounded-xl hover:border-green-400/60 transition-all duration-500 hover:scale-[1.02] sm:hover:scale-105 hover:shadow-2xl hover:shadow-green-900/30 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-green-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
@@ -231,16 +231,14 @@ const About: React.FC = () => {
                     <SystemIcon />
                   </div>
                   <h3 className="font-bold text-green-400 text-base sm:text-lg mb-2 font-mono">
-                    System Design & Automation
+                    Data Engineering & Analysis
                   </h3>
                   <p className="text-gray-400 text-sm sm:text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                    Studying{" "}
-                    <span className="text-green-400 font-semibold">
-                      system design
-                    </span>{" "}
-                    and architecture patterns, refactoring old projects to apply
-                    what I learn, and building small automation tools to remove
-                    repetitive work from my day-to-day flow.
+                    Studying as a Software Engineering undergraduate with a big focus on data. I am learning how to build smooth data pipelines and understand complex data. My goal is to combine these{" "}
+                    <span className="text-green-400 font-semibold">data skills</span>{" "}
+                    with my{" "}
+                    <span className="text-green-400 font-semibold">fullstack web development</span>{" "}
+                    experience.
                   </p>
                 </div>
               </div>
