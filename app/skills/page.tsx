@@ -181,7 +181,7 @@ const structuredData = {
     ...skillsData.databases,
     ...skillsData.tools,
     ...skillsData.deployment,
-    ...skillsData.ai_ml,
+    ...skillsData.data_analytics,
   ],
   jobTitle: "Full Stack MERN Developer",
   address: {
@@ -337,10 +337,10 @@ export default function Skills() {
       skills: skillsData.deployment,
     },
     {
-      key: "ai_ml",
-      title: "AI/ML",
+      key: "data_analytics",
+      title: "Data & Analytics",
       icon: <BrainIcon />,
-      skills: skillsData.ai_ml,
+      skills: skillsData.data_analytics,
     },
   ];
 
@@ -403,7 +403,7 @@ export default function Skills() {
                 skillsData.databases.length +
                 skillsData.tools.length +
                 skillsData.deployment.length +
-                skillsData.ai_ml.length}{" "}
+                skillsData.data_analytics.length}{" "}
               total skills across {categories.length} categories
             </p>
           </footer>

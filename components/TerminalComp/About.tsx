@@ -150,7 +150,7 @@ const About: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-gray-300 text-sm sm:text-base">
-                  Doing my BSc in Software Engineering. I am studying topics like advanced databases (SQL), data structures, system architecture, and QA.
+                  Doing my BSc in Software Engineering. I am focusing on the big picture of technology, learning how to plan, manage, and build real-world solutions.
                 </p>
               </div>
 

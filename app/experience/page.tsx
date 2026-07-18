@@ -199,123 +199,82 @@ export default function Experience() {
               Experience
             </h1>
             <p>
-              Professional roles as a Software Developer at CHATI and Prominds
-              Digital — architecting B2B AI Voice Calling SaaS on FreeSWITCH/WebRTC,
-              scalable multi-tenant CRM for automotive dealerships, and large-scale
-              data pipelines.
+              Professional roles as a Co-Founder & Fullstack Developer at Syntechcraft and a Software Engineer Intern at the Department of Examination Sri Lanka — building reliable web apps, managing databases, and delivering IT solutions.
             </p>
           </header>
 
           <div>
-            {/* CHATI */}
+            {/* Syntechcraft */}
             <article
-              aria-labelledby="chati-heading"
+              aria-labelledby="syntechcraft-heading"
               itemScope
               itemType="https://schema.org/Organization"
             >
               <header>
-                <h2 id="chati-heading" itemProp="name">
-                  CHATI
+                <h2 id="syntechcraft-heading" itemProp="name">
+                  Syntechcraft
                 </h2>
                 <p>
-                  <strong>{chatiTotal}</strong> · Bhubaneswar, Odisha, India ·
-                  On-site
+                  <strong>5 mos</strong> · Colombo, Sri Lanka · Remote
                 </p>
               </header>
 
-              {/* Junior Software Developer — Lead AI Engineer (current) */}
-              <section aria-labelledby="chati-jr-heading">
-                <h3 id="chati-jr-heading">
-                  Junior Software Developer (Lead AI Engineer) · Full-time
+              <section aria-labelledby="syntechcraft-role-heading">
+                <h3 id="syntechcraft-role-heading">
+                  Co-Founder & Fullstack Developer · Full-time
                 </h3>
                 <p>
-                  <time dateTime={toIso(CHATI_JR_START)}>Mar 2026</time> —
-                  Present · {chatiJr}
+                  <time dateTime="2026-03">Mar 2026</time> — Present · 5 mos
                 </p>
                 <ul itemProp="description">
                   <li>
-                    Product Leadership: Serving as lead developer architecting a
-                    B2B AI Voice Calling SaaS platform for automated inbound and
-                    outbound voice systems.
+                    Web Applications: Building complete, reliable web apps for clients from start to finish.
                   </li>
                   <li>
-                    Telephony Infrastructure: Engineering high-availability VoIP
-                    infrastructure using FreeSWITCH, ESL, and WebRTC to
-                    orchestrate real-time, low-latency audio streaming.
+                    Database Design: Setting up and managing secure databases to store and track backend data smoothly.
                   </li>
                   <li>
-                    Voice AI Pipeline: Integrating low-latency STT, LLM
-                    orchestration, and TTS pipelines to deliver human-like
-                    conversational responses during live calls.
-                  </li>
-                </ul>
-              </section>
-
-              {/* Software Developer Intern */}
-              <section aria-labelledby="chati-intern-heading">
-                <h3 id="chati-intern-heading">
-                  Software Developer Intern · Internship
-                </h3>
-                <p>
-                  <time dateTime={toIso(CHATI_INTERN_START)}>Oct 2025</time> —{" "}
-                  <time dateTime={toIso(CHATI_INTERN_END)}>Mar 2026</time> ·{" "}
-                  {chatiIntern}
-                </p>
-                <ul itemProp="description">
-                  <li>
-                    AI Meeting Assistant: Built an AI assistant for Zoom, Teams,
-                    and Google Meet that automates recording and transcript
-                    summaries for 500+ active users.
-                  </li>
-                  <li>
-                    High-Performance Pipeline: Engineered a batch-processing
-                    system that cleaned, validated, and migrated 1.2M+ records
-                    into production in under 10 minutes.
-                  </li>
-                  <li>
-                    Algorithmic Deduplication: Designed a Union–Find based
-                    clustering system to deduplicate related records in near
-                    O(1) time per link.
+                    Team Deployment: Working closely with my team to put projects online and keep our servers running well.
                   </li>
                 </ul>
               </section>
             </article>
 
-            {/* Prominds Digital */}
+            {/* Department of Examination Sri Lanka */}
             <article
-              aria-labelledby="prominds-heading"
+              aria-labelledby="doels-heading"
               itemScope
               itemType="https://schema.org/Organization"
             >
               <header>
-                <h2 id="prominds-heading" itemProp="name">
-                  Prominds Digital
+                <h2 id="doels-heading" itemProp="name">
+                  Department of Examination Sri Lanka
                 </h2>
                 <p>
-                  <strong>Part-time · {promindsTotal}</strong> · Bhubaneswar,
-                  Odisha, India
+                  <strong>7 mos</strong> · Colombo, Sri Lanka · On-site
                 </p>
               </header>
 
-              <ul itemProp="description">
-                <li>
-                  Multi-Tenant SaaS Architecture: Architected and shipped
-                  AutoPulse, a scalable B2B CRM for automotive dealerships
-                  featuring granular Role-Based Access Control (RBAC) and
-                  organization-level feature toggles.
-                </li>
-                <li>
-                  Production Deployment: Successfully deployed the platform
-                  across 5+ active dealerships, processing 5,000+ monthly
-                  visitor entries with production-grade lead pipeline
-                  reliability.
-                </li>
-                <li>
-                  Automated Messaging &amp; Scaling: Built automated WhatsApp
-                  follow-up workflows and high-throughput CRM data migration
-                  tools using RabbitMQ for message queuing.
-                </li>
-              </ul>
+              <section aria-labelledby="doels-role-heading">
+                <h3 id="doels-role-heading">
+                  Software Engineer Intern · Internship
+                </h3>
+                <p>
+                  <time dateTime="2025-10">Oct 2025</time> —{" "}
+                  <time dateTime="2026-04">Apr 2026</time> · 7 mos
+                </p>
+                <ul itemProp="description">
+                  <li>
+                    Development & Data: Helped build web apps and manage databases. Wrote fast queries to load data and make useful reports.
+                  </li>
+                  <li>
+                    Fixing Errors: Found and fixed system errors and data issues during very busy times to keep everything running smoothly.
+                  </li>
+                  <li>
+                    Teamwork: Worked with senior staff and users to find out what they needed, create data reports, and help deliver good IT solutions.
+                  </li>
+                </ul>
+              </section>
             </article>
           </div>
         </div>

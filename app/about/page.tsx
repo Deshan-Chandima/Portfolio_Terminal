@@ -361,7 +361,7 @@ export default function About() {
                     </time>
                   </div>
                   <p itemProp="description">
-                    Doing my BSc in Software Engineering. I am studying topics like advanced databases (SQL), data structures, system architecture, and QA.
+                    Doing my BSc in Software Engineering. I am focusing on the big picture of technology, learning how to plan, manage, and build real-world solutions.
                   </p>
                 </article>
 

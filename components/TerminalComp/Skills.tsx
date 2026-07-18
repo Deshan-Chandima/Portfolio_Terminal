@@ -337,10 +337,10 @@ const Skills: React.FC = () => {
       skills: skillsData.deployment,
     },
     {
-      key: "ai_ml",
-      title: "AI/ML",
+      key: "data_analytics",
+      title: "Data & Analytics",
       icon: <BrainIcon />,
-      skills: skillsData.ai_ml,
+      skills: skillsData.data_analytics,
     },
   ];
 

@@ -141,53 +141,17 @@ export interface SkillsCategory {
   databases: string[];
   tools: string[];
   deployment: string[];
-  ai_ml: string[];
+  data_analytics: string[];
 }
 
 export const skills: SkillsCategory = {
-  languages: ["JavaScript (ES6+)", "TypeScript", "Python", "C++", "HTML5", "CSS3"],
-  frontend: ["React", "Next.js", "Remix", "TanStack Query", "Tailwind CSS", "EJS", "Vite"],
-  backend: ["Node.js", "Express.js", "FastAPI", "REST APIs", "OAuth 2.0", "JWT"],
-  databases: [
-    "MongoDB",
-    "Mongoose",
-    "MongoDB Atlas",
-    "RabbitMQ",
-    "Redis",
-    "PostgreSQL",
-    "VectorDB",
-    "Weaviate",
-    "Neo4j",
-  ],
-  tools: [
-    "Git & GitHub",
-    "Docker",
-    "Kubernetes",
-    "Postman",
-    "Linux/CLI",
-    "Claude Code",
-    "OpenCode",
-    "Ubuntu",
-    "Arch Linux",
-  ],
-  deployment: [
-    "AWS S3",
-    "Azure",
-    "GCP",
-    "VPS (Virtual Private Server)",
-    "Vercel",
-    "Render",
-    "Dokploy",
-  ],
-  ai_ml: [
-    "Pandas",
-    "NumPy",
-    "PyTorch",
-    "TensorFlow",
-    "RAG (Retrieval-Augmented Generation)",
-    "Tool Calling",
-    "MCP (Model Context Protocol)",
-  ],
+  languages: ["JavaScript", "Python", "Java", "PHP", "SQL", "HTML5 / CSS3"],
+  frontend: ["React", "Next.js", "Tailwind CSS", "Chart.js"],
+  backend: ["Node.js", "Express.js", "REST APIs"],
+  databases: ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "Firebase"],
+  tools: ["Git / GitHub", "Postman"],
+  deployment: ["cPanel", "Vercel", "Render"],
+  data_analytics: ["Data Modeling", "Data Warehousing", "Databricks", "Dashboard Creation"],
 };
 
 // Faux shell command shown above each skill category.
@@ -198,7 +162,7 @@ export const skillCommands: Record<keyof SkillsCategory, string> = {
   databases: "show databases;",
   tools: "which --all tools",
   deployment: "kubectl get deployments -A",
-  ai_ml: "python -m pip list | grep ai",
+  data_analytics: "SELECT * FROM analytics_data;",
 };
 
 // ---------------------------------------------------------------------------
