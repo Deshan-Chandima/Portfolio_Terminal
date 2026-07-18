@@ -24,7 +24,7 @@ import "@/public/css/IdentityComp.css";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 useGLTF.preload("/models/card.glb");
-useTexture.preload("/images/Deshan.jpg");
+useTexture.preload("/images/Mirror.JPG");
 
 type LerpedBody = RapierRigidBody & { lerped?: THREE.Vector3 };
 
@@ -123,7 +123,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   };
   
   const { nodes, materials } = useGLTF("/models/card.glb") as unknown as GLTFCardResult;
-  const deshanTexture = useTexture("/images/Deshan.jpg");
+  const deshanTexture = useTexture("/images/Mirror.JPG");
 
   // Dynamically generate the lanyard stripe texture with "Deshan" text
   const lanyardTexture = useMemo(() => {
@@ -177,20 +177,24 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
       
       const imgTargetHeight = frontMappedHeight * 0.75; // Image takes top 75% of the card
 
-      // 2. Draw Image (Object-fit: cover into the top area)
+      // 2. Draw Image (Object-fit: contain into the top area)
       const img = deshanTexture.image;
       const imgAspect = img.width / img.height;
       const targetAspect = frontWidth / imgTargetHeight;
 
-      let sx = 0, sy = 0, sw = img.width, sh = img.height;
+      let dw = frontWidth;
+      let dh = imgTargetHeight;
+      let dx = 0;
+      let dy = 0;
+
       if (imgAspect > targetAspect) {
-        sw = img.height * targetAspect;
-        sx = (img.width - sw) / 2;
+        dh = frontWidth / imgAspect;
+        dy = (imgTargetHeight - dh) / 2;
       } else {
-        sh = img.width / targetAspect;
-        sy = (img.height - sh) / 2;
+        dw = imgTargetHeight * imgAspect;
+        dx = (frontWidth - dw) / 2;
       }
-      ctx.drawImage(img, sx, sy, sw, sh, 0, 0, frontWidth, imgTargetHeight);
+      ctx.drawImage(img, dx, dy, dw, dh);
 
       // 3. Draw Text (Bottom 25% of the card)
       ctx.fillStyle = "#ffffff";

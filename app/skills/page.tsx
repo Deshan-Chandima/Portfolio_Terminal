@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "https://www.github.com/Deshan-Chandima/images/logo.jpg",
+        url: "https://www.github.com/Deshan-Chandima/images/Mirror.JPG",
         width: 1200,
         height: 630,
         alt: "Deshan Chandima - Skills & Tech Stack",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Skills & Tech Stack | MERN Stack Developer",
     description:
       "Full-stack expertise in MERN, TypeScript, Python, and machine learning. Comprehensive technical skills portfolio.",
-    images: ["https://www.github.com/Deshan-Chandima/images/logo.jpg"],
+    images: ["https://www.github.com/Deshan-Chandima/images/Mirror.JPG"],
   },
   robots: {
     index: true,
@@ -173,7 +173,7 @@ const structuredData = {
   "@type": "Person",
   name: "Deshan Chandima",
   url: "https://www.github.com/Deshan-Chandima",
-  image: "https://www.github.com/Deshan-Chandima/images/logo.jpg",
+  image: "https://www.github.com/Deshan-Chandima/images/Mirror.JPG",
   knowsAbout: [
     ...skillsData.languages,
     ...skillsData.frontend,
