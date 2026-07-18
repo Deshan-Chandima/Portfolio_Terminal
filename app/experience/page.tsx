@@ -212,7 +212,7 @@ export default function Experience() {
             >
               <header>
                 <h2 id="syntechcraft-heading" itemProp="name">
-                  Syntechcraft
+                  Syntechcraft <a href="https://www.syntechcraft.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline" style={{ fontSize: '0.7em', marginLeft: '8px' }}>[www.syntechcraft.com]</a>
                 </h2>
                 <p>
                   <strong>5 mos</strong> · Colombo, Sri Lanka · Remote

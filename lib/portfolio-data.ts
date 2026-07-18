@@ -170,9 +170,9 @@ export const skillCommands: Record<keyof SkillsCategory, string> = {
 // ---------------------------------------------------------------------------
 
 export const CONTACT_EMAIL = "deshan.c163@gmail.com";
-export const CONTACT_LOCATION = "Bhubaneswar, Odisha, India";
+export const CONTACT_LOCATION = "Colombo, Sri Lanka";
 export const RESUME_URL =
-  "https://docs.google.com/document/d/17j42jMRIdxD2HG9eWuUKHr0StgfkClw0/edit?usp=sharing&ouid=108009276343665861649&rtpof=true&sd=true";
+  "https://drive.google.com/uc?export=download&id=1YTcyCgirUAQoIo3uh5e2Tm2U1lEajg2r";
 
 // Icon rendering differs between the static page and the terminal pane, so each
 // side keys its own icon set off `name`; only the link metadata lives here.
@@ -183,12 +183,8 @@ export interface SocialLinkData {
 }
 
 export const socialLinks: SocialLinkData[] = [
-  { name: "YouTube", href: "https://www.youtube.com/@morscode7", color: "red" },
-  { name: "Twitter / X", href: "https://x.com/DeshanChandima", color: "blue" },
-  { name: "Instagram", href: "https://www.instagram.com/github.com/Deshan-Chandima", color: "pink" },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/DeshanChandima", color: "blue" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/deshan-chandima", color: "blue" },
   { name: "GitHub", href: "https://github.com/Deshan-Chandima", color: "purple" },
-  { name: "LeetCode", href: "https://leetcode.com/u/DeshanChandima/", color: "yellow" },
 ];
 
 // ---------------------------------------------------------------------------

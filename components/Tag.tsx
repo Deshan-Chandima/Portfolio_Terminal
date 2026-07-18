@@ -201,7 +201,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
       ctx.fillStyle = "#d4d4d8"; 
       ctx.font = "25px Inter, sans-serif";
-      ctx.fillText("Software Engineer", 40, imgTargetHeight + 120, 440);
+      ctx.fillText("Software Engineer Undergraduate", 40, imgTargetHeight + 120, 440);
 
       ctx.restore();
 

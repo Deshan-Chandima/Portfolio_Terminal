@@ -70,8 +70,16 @@ const Experience: React.FC = () => {
               <div className="border-b border-green-800/20 pb-6">
                 <div className="flex items-start gap-3 mb-4">
                   <div className="min-w-0">
-                    <h3 className="text-green-400 font-semibold text-base sm:text-lg font-mono">
+                    <h3 className="text-green-400 font-semibold text-base sm:text-lg font-mono flex flex-wrap items-center gap-2">
                       Syntechcraft
+                      <a 
+                        href="https://www.syntechcraft.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-blue-400/80 hover:text-blue-400 text-xs sm:text-sm font-normal underline decoration-blue-400/30 hover:decoration-blue-400/80 transition-colors"
+                      >
+                        [www.syntechcraft.com]
+                      </a>
                     </h3>
                     <p className="text-gray-400 text-xs sm:text-sm">
                       5 mos

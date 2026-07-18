@@ -491,7 +491,7 @@ const Contact: React.FC = () => {
         >
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs sm:text-sm font-mono space-y-2 sm:space-y-0">
             <div className="flex items-center space-x-2 sm:space-x-4">
-              <span className="text-green-400">✓ Monkey D. Luffy </span>
+              <span className="text-green-400">✓ Sh4aN </span>
               <span
                 className="text-gray-500 hidden sm:inline"
                 aria-hidden="true"
