@@ -338,10 +338,26 @@ const HELP_ITEMS: HelpItem[] = [
 ];
 
 const WELCOME_LINES: string[] = [
+  "=======================================================================",
+  "  ____            _                   ",
+  " |  _ \\ ___  ___| |__   __ _ _ __   ",
+  " | | | / _ \\/ __| '_ \\ / _` | '_ \\  ",
+  " | |_| \\___/\\___|_| |_|\\__,_|_| |_| ",
+  "                                      ",
+  "=======================================================================",
   "Hi, I'm Deshan Chandima, a Software Developer.",
   "Welcome to my interactive portfolio terminal!",
-  "Type 'help' or 'ls' for commands. Use 'cd <name>' to open sections (e.g. cd about, cd blog, cd projects).",
-  "✨ NEW: Try 'ai <your question>' to chat with AI assistant!",
+  "",
+  "I specialize in building scalable web applications, RESTful APIs, and",
+  "robust backend systems. Take a look around to see my work.",
+  "",
+  "💡 Getting Started:",
+  "  • Type 'ls' to see available directories.",
+  "  • Use 'cd <directory>' to explore (e.g., 'cd projects', 'cd about').",
+  "  • Type 'help' to see all available terminal commands.",
+  "",
+  "✨ NEW: Try 'ai <your question>' to chat with my AI assistant!",
+  "=======================================================================",
 ];
 
 // Tab completion: full-line completions (for backward compatibility)

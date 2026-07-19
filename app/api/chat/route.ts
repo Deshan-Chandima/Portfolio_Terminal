@@ -1,18 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { projects, skills } from "@/lib/portfolio-data";
 
 const apiKey = process.env.GEMINI_API_KEY;
 const modelId = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
 const genAI = new GoogleGenerativeAI(apiKey || "");
 
+const projectsContext = "Projects (type 'cd projects' to see all): " + projects.map((p, i) => `${i + 1}) ${p.name} — ${p.description}; Tech: ${p.tech.join(", ")}.`).join(" ");
+
+const skillsContext = "Tech: " + Object.entries(skills).map(([category, list]) => `${category} — ${list.join(", ")}`).join(". ");
+
 const CONTEXT_PARTS = {
-  base: `You are Deshan Chandima's AI assistant on his portfolio terminal. CRITICAL: Reply in 2–3 short sentences only. Never write long paragraphs or list everything—give a direct, brief answer to what was asked. Deshan is a Fullstack Web Developer focused on building web apps with React, Node.js, Express, and MySQL, with a strong growing interest in Data Analysis and Data Engineering. Based in Bhubaneswar, India.`,
+  base: `You are Deshan Chandima's AI assistant on his portfolio terminal. CRITICAL: Reply in 2–3 short sentences only. Never write long paragraphs or list everything—give a direct, brief answer to what was asked. Deshan is a Fullstack Web Developer focused on building web apps with React, Node.js, Express, and MySQL, with a strong growing interest in Data Analysis and Data Engineering. Based in Colombo, Sri Lanka.`,
 
-  skills: `Tech: Languages — JavaScript, TypeScript, Python, C++, HTML5, CSS3. Frontend — React, Next.js, Remix, TanStack Query, Tailwind CSS, EJS, Vite. Backend — Node.js, Express.js, FastAPI, REST APIs, OAuth 2.0, JWT. Databases — MongoDB, RabbitMQ, Redis, PostgreSQL, VectorDB. Tools — Git & GitHub, Docker, Kubernetes, Postman, Linux/CLI, Claude Code, OpenCode, Ubuntu, Arch Linux. Deployment — AWS S3, Azure, GCP, Vercel, Render, Dokploy. AI/ML — Pandas, NumPy, PyTorch, TensorFlow, RAG, Tool Calling, MCP.`,
+  skills: skillsContext,
 
-  projects: `Projects (type 'cd projects' to see all): 1) AutoPulse — multi-tenant dealership/showroom management (RBAC, WhatsApp, enquiries, lead/CRM), deployed to 5+ showrooms, 5000+ visitor entries; GitHub: Deshan-Chandima/AutoPulseOLD. 2) WhatsApp Campaign Management — MERN + TypeScript, admin/reseller roles, Cloudinary; live: whats-app-campaigner.vercel.app, GitHub: Deshan-Chandima/WhatsApp-Campaigner. 3) RukiAI — AI personal finance tracker with Cohere API; rukiai.online, GitHub: AI-Personal-Finance-Tracker. 4) Neural Network from scratch (Python/NumPy); digit-recognizer-fullstack.vercel.app. 5) Network Marketing full‑stack (MLM); GitHub: Network-Marketing. 6) YouTube Backend (Node, Express, MongoDB, JWT); GitHub: YouTube-Clone-Backend. 7) AI Madness — compare ChatGPT, Claude, Gemini, etc. on one dashboard; ai-madness.onrender.com, GitHub: AI-Madness.`,
+  projects: projectsContext,
 
-  experience: `Current roles: (1) Syntechcraft — Co-Founder & Fullstack Developer, Full-time, Mar 2026–Present, Colombo, Sri Lanka (Remote). Building complete, reliable web apps for clients from start to finish. Setting up and managing secure databases to store and track backend data smoothly. Working closely with my team to put projects online and keep our servers running well. (2) Department of Examination Sri Lanka — Software Engineer Intern, Internship, Oct 2025–Apr 2026, Colombo, Sri Lanka (On-site). Helped build web apps and manage databases. Wrote fast queries to load data and make useful reports. Found and fixed system errors and data issues during very busy times to keep everything running smoothly. Worked with senior staff and users to find out what they needed, create data reports, and help deliver good IT solutions.`,
+  experience: `Current roles: (1) Syntechcraft — Co-Founder & Fullstack Developer, Full-time, Mar 2026–Present, Colombo, Sri Lanka (Remote). Building complete, reliable web apps for clients from start to finish. Setting up and managing secure databases to store and track backend data smoothly. Working closely with my team to put projects online and keep our servers running well. (2) Department of Examination Sri Lanka — Software Engineer Intern, Internship, Oct 2025–Apr 2026, Colombo, Sri Lanka (On-site). Helped build web apps and manage databases. Wrote fast queries to load data and make useful reports. Found and fixed system errors and data issues during very busy times to keep everything running smoothly. Worked with senior staff and users to find out what they needed, create data reports, and help deliver good IT solutions. Note: Any of the projects listed were built and delivered by my team at our startup (Syntechcraft), while more of them are personal projects.`,
 
   contact: `Contact: Email deshan.c163@gmail.com. LinkedIn linkedin.com/in/deshan-chandima. GitHub github.com/Deshan-Chandima. Resume: https://drive.google.com/uc?export=download&id=1YTcyCgirUAQoIo3uh5e2Tm2U1lEajg2r (also linked on contact page). Location: Colombo, Sri Lanka.`,
 
@@ -122,10 +127,6 @@ export async function POST(request: NextRequest) {
 
     const model = genAI.getGenerativeModel({
       model: modelId,
-      generationConfig: {
-        maxOutputTokens: 150,
-        temperature: 0.6,
-      },
       systemInstruction: relevantContext,
     });
 
