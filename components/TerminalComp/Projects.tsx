@@ -196,6 +196,18 @@ const Projects: React.FC = () => {
         </span>
       </header>
 
+      {/* Startup Note */}
+      <div className="bg-gray-800/50 border border-green-500/30 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6 text-gray-300 font-mono text-xs sm:text-sm shadow-lg backdrop-blur-sm">
+        <p>
+          <span className="text-green-400 font-bold">Note: </span> 
+          This portfolio features a mix of my personal projects and enterprise solutions built and delivered by my team at our startup,{" "}
+          <a href="https://www.syntechcraft.com/" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:underline hover:text-green-300 transition-colors">
+            SynTechCraft
+          </a>
+          . I have hands-on experience with the complete development lifecycle across all of these applications.
+        </p>
+      </div>
+
       {/* Page indicator - Mobile optimized */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 space-y-2 sm:space-y-0">
         <div
