@@ -30,13 +30,22 @@ export const projects: Project[] = [
     tech: ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"],
   },
   {
-    name: "Eduran.lk (LMS)",
+    name: "ISP Eye: Network Monitoring",
     description:
-      "Edurn.lk is a full-featured Learning Management System (LMS) developed with both frontend and backend integration. It includes a fully functional Admin Panel for managing users, courses, and system activities, as well as a Student Dashboard that allows students to access learning materials and interact with the platform efficiently.",
-    imageUrl: "/images/Mirror.JPG",
-    liveUrl: "https://www.syntechcraft.com/projects",
-    githubUrl: "https://github.com/Deshan-Chandima",
-    tech: ["Next.js", "TypeScript", "React", "Node.js", "Tailwind CSS"],
+      "A comprehensive, end-to-end network monitoring and data engineering pipeline. It automatically runs in the background to log historical performance, detect network outages, and track real-time process-level bandwidth usage. Features a FastAPI backend, MySQL data storage, and a premium React dashboard for data visualization.",
+    imageUrl: "/images/isp eye.png",
+    liveUrl: "#",
+    githubUrl: "https://github.com/Deshan-Chandima/ISP_EYE.git",
+    tech: ["Python", "FastAPI", "React", "MySQL", "SQLAlchemy"],
+  },
+  {
+    name: "Paper Cloud.LK",
+    description:
+      "Paper Cloud.LK is a modern, interactive educational platform built to provide students with easy access to past papers, study materials, educational blogs, and information about classes. The platform is designed with a highly engaging and dynamic user interface to enhance the learning experience.",
+    imageUrl: "/images/paper.png",
+    liveUrl: "https://papercloud.lk",
+    githubUrl: "https://github.com/Deshan-Chandima/Paper-Cloud.LK_frontend.git",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
   },
   {
     name: "Samee And Sandu",
@@ -55,6 +64,24 @@ export const projects: Project[] = [
     liveUrl: "https://mazelineevents.com",
     githubUrl: "https://github.com/Deshan-Chandima/Rental_management_frontend.git",
     tech: ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"],
+  },
+  {
+    name: "Amy Bot (In Development)",
+    description:
+      "A multipurpose Discord bot designed for server management, moderation, and community entertainment. Built with a modular Cog architecture, it handles real-time WebSocket events and REST API interactions asynchronously. Features include dynamic help menus, moderation tools, interactive games, and robust error logging.",
+    imageUrl: "/images/discord.png",
+    liveUrl: "#",
+    githubUrl: "#",
+    tech: ["Python 3", "discord.py", "asyncio"],
+  },
+  {
+    name: "CeylonEpic Travels",
+    description:
+      "CeylonEpic Travels is a comprehensive travel booking platform with full frontend and backend integration, ensuring smooth and reliable performance. It includes a fully functional admin panel to efficiently manage bookings, users and customized travel packages. The platform offers a wide range of destinations, competitive pricing, personalized itineraries and a convenient taxi service to deliver a complete and unforgettable travel experience in Sri Lanka.",
+    imageUrl: "/images/ceylonepic.png",
+    liveUrl: "https://ceylonepic.com/",
+    githubUrl: "#",
+    tech: ["React", "Node.js", "Express", "Tailwind CSS"],
   }
 ];
 
@@ -113,6 +140,7 @@ export interface SocialLinkData {
 export const socialLinks: SocialLinkData[] = [
   { name: "LinkedIn", href: "https://www.linkedin.com/in/deshan-chandima", color: "blue" },
   { name: "GitHub", href: "https://github.com/Deshan-Chandima", color: "purple" },
+  { name: "Discord", href: "https://discord.com/users/d_sh4an", color: "indigo" },
 ];
 
 // ---------------------------------------------------------------------------
