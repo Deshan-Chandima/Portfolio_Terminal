@@ -1317,7 +1317,6 @@ export default function Terminal({
         </div>
         <nav className="terminal-nav" aria-label="Terminal navigation">
           {[
-            "help",
             "about",
             "projects",
             "skills",
