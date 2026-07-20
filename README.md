@@ -278,18 +278,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - Inspired by classic terminal interfaces and cyberpunk aesthetics
 - Built with modern web technologies
-- AI chat powered by Google Gemini
-- Deployed on Vercel's edge network
-
-## 💡 Future Enhancements
-
-- [ ] Add blog section with MDX support
-- [ ] Implement dark/light theme toggle
-- [ ] Add more terminal commands
-- [ ] Integrate analytics dashboard
-- [ ] Add project filtering and search
-- [ ] Implement PWA features for offline access
-- [ ] Add more AI chat personalities
 
 ## 🐛 Bug Reports
 
