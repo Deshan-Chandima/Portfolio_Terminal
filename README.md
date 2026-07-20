@@ -292,5 +292,4 @@ If you like this project, please consider giving it a ⭐ on GitHub!
 **Built with 💚 by [Deshan Chandima](https://github.com/Deshan-Chandima)**
 
 _Last Updated: November 2025_
-#   P o r t f o l i o _ T e r m i n a l  
- 
+# Portfolio_Terminal
