@@ -253,6 +253,12 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({ skill, delay = 0 }) => {
 
 // Matrix-like background effect
 const MatrixBackground: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Generate random positions and delays once on component initialization
   const [particles] = useState(() =>
     [...Array(20)].map(() => ({
@@ -263,6 +269,8 @@ const MatrixBackground: React.FC = () => {
       text: Math.random().toString(36).substring(7),
     }))
   );
+
+  if (!mounted) return null;
 
   return (
     <div

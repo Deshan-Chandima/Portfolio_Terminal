@@ -41,13 +41,20 @@ export const TypewriterText: React.FC<TypewriterTextProps> = ({
 // viewports; per-column animation delays are randomized once on mount so the
 // rain doesn't reshuffle on every re-render.
 export const MatrixRain: React.FC = () => {
-  const chars = "01";
-  const columns =
-    typeof window !== "undefined" && window.innerWidth < 768 ? 20 : 50;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const [columnDelays] = useState(() =>
-    Array.from({ length: columns }, () => Math.random() * 5)
+    Array.from({ length: 50 }, () => Math.random() * 5)
   );
+
+  if (!mounted) return null;
+
+  const chars = "01";
+  const columns = window.innerWidth < 768 ? 20 : 50;
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
