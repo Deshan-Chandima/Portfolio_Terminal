@@ -7,13 +7,7 @@ export const TWITTER_HANDLE = "@DeshanChandima";
 export const DEFAULT_OG_IMAGE = "/images/Mirror.JPG";
 export const LOGO_URL = `${SITE_URL}/images/Mirror.JPG`;
 
-export const BLOG_PATH = "/blog";
-export const BLOG_RSS_PATH = "/blog/rss.xml";
-export const BLOG_CANONICAL = `${SITE_URL}${BLOG_PATH}`;
-export const BLOG_RSS_URL = `${SITE_URL}${BLOG_RSS_PATH}`;
 
-export const BLOG_DESCRIPTION =
-  "Developer blog by Deshan Chandima — essays on backend engineering, system design, WebRTC/SIP, AI calling, open-source security, supply-chain risk, and experiments from real projects.";
 
 export function toIsoDateTime(dateStr?: string): string | undefined {
   if (!dateStr) return undefined;
@@ -32,6 +26,3 @@ export function absoluteUrl(path: string): string {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
-export function postOgImageUrl(slug: string): string {
-  return absoluteUrl(`/blog/${slug}/opengraph-image`);
-}

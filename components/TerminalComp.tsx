@@ -3,19 +3,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import "@/public/css/TerminalComp.css";
-import type { BlogInitialPost } from "@/components/BlogTerminalPage.types";
 
 import About from "./TerminalComp/About";
 import Projects from "./TerminalComp/Projects";
 import Skills from "./TerminalComp/Skills";
 import Contact from "./TerminalComp/Contact";
 import Experience from "./TerminalComp/Experience";
-import Blog from "./TerminalComp/Blog";
-import BlogSearchResults from "./TerminalComp/BlogSearchResults";
-import {
-  searchBlogPosts,
-  type BlogSearchPost,
-} from "@/lib/blog-search";
 import {
   HOME_DIR,
   FILE_CONTENTS,
@@ -67,10 +60,6 @@ interface HelpItem {
 
 interface TerminalProps {
   onFirstCommand?: () => void;
-  /** When set, this terminal is mounted on /blog routes. */
-  blogRoute?: boolean;
-  initialBlogSlug?: string | null;
-  initialBlogPost?: BlogInitialPost | null;
   /** Deep-link from /?section=about */
   initialSection?: string | null;
   /** Deep-link from /?cmd=help */
@@ -293,9 +282,7 @@ const HELP_ITEMS: HelpItem[] = [
   { type: "command", command: "cd skills", description: "See my technical skills." },
   { type: "command", command: "cd experience", description: "View my professional experience." },
   { type: "command", command: "cd contact", description: "Get my contact information." },
-  { type: "command", command: "cd blog", description: "Open the blog (/blog)." },
-  { type: "command", command: "blog [keyword]", description: "Open blog or search posts (e.g. blog Malware)." },
-  { type: "command", command: "cat <file>", description: "Print file contents (e.g. cat README, cat blog)." },
+  { type: "command", command: "cat <file>", description: "Print file contents (e.g. cat README)." },
   { type: "command", command: "whoami", description: "Print current user." },
   { type: "command", command: "hostname", description: "Print system hostname." },
   { type: "command", command: "id", description: "Print user and group IDs." },
@@ -338,10 +325,26 @@ const HELP_ITEMS: HelpItem[] = [
 ];
 
 const WELCOME_LINES: string[] = [
+  "=======================================================================",
+  "  ____            _                   ",
+  " |  _ \\ ___  ___| |__   __ _ _ __   ",
+  " | | | / _ \\/ __| '_ \\ / _` | '_ \\  ",
+  " | |_| \\___/\\___|_| |_|\\__,_|_| |_| ",
+  "                                      ",
+  "=======================================================================",
   "Hi, I'm Deshan Chandima, a Software Developer.",
   "Welcome to my interactive portfolio terminal!",
-  "Type 'help' or 'ls' for commands. Use 'cd <name>' to open sections (e.g. cd about, cd blog, cd projects).",
-  "✨ NEW: Try 'ai <your question>' to chat with AI assistant!",
+  "",
+  "I specialize in building scalable web applications, RESTful APIs, and",
+  "robust backend systems. Take a look around to see my work.",
+  "",
+  "💡 Getting Started:",
+  "  • Type 'ls' to see available directories.",
+  "  • Use 'cd <directory>' to explore (e.g., 'cd projects', 'cd about').",
+  "  • Type 'help' to see all available terminal commands.",
+  "",
+  "✨ NEW: Try 'ai <your question>' to chat with my AI assistant!",
+  "=======================================================================",
 ];
 
 // Tab completion: full-line completions (for backward compatibility)
@@ -352,9 +355,6 @@ const TAB_COMPLETIONS: string[] = [
   "cd skills",
   "cd experience",
   "cd contact",
-  "cd blog",
-  "blog",
-  "cat blog",
   "help",
   "ls",
   "ls -l",
@@ -378,7 +378,6 @@ const TAB_COMPLETIONS: string[] = [
   "banner",
   "yes",
   "clear",
-  "blog",
   "exit",
   "uptime",
   "free",
@@ -423,7 +422,6 @@ const COMMAND_NAMES = [
   "history",
   "man",
   "clear",
-  "blog",
   "exit",
   "ai",
   "neofetch",
@@ -482,7 +480,6 @@ const COMMAND_NAMES = [
 const CD_SECTIONS = [
   "welcome",
   "about",
-  "blog",
   "projects",
   "skills",
   "experience",
@@ -502,8 +499,7 @@ function getCommonPrefix(strings: string[]): string {
 
 /** Context-aware tab completion: returns matches and the line to set (single match or common prefix). */
 function getTabCompletion(
-  input: string,
-  blogPosts: BlogSearchPost[] = []
+  input: string
 ): { matches: string[]; setLine: string; isPartial: boolean } {
   const raw = input.trimEnd();
   const endsWithSpace = /\s$/.test(input);
@@ -515,24 +511,6 @@ function getTabCompletion(
     : raw;
   const argPrefix = prefix.toLowerCase();
   const baseForArg = endsWithSpace ? raw + " " : parts.slice(0, -1).join(" ") + (parts.length > 1 ? " " : "");
-
-  if (isCompletingArg && command === "blog" && blogPosts.length > 0) {
-    const matches = blogPosts
-      .filter(
-        (p) =>
-          p.slug.toLowerCase().startsWith(argPrefix) ||
-          p.title.toLowerCase().includes(argPrefix)
-      )
-      .map((p) => p.slug);
-    if (matches.length === 0) return { matches: [], setLine: input, isPartial: false };
-    const common = getCommonPrefix(matches);
-    const setLine = matches.length === 1 ? baseForArg + matches[0] : baseForArg + common;
-    return {
-      matches,
-      setLine,
-      isPartial: matches.length > 1 && common.length === prefix.length,
-    };
-  }
 
   if (isCompletingArg && (command === "cd" || command === "cat" || command === "man")) {
     const list =
@@ -639,9 +617,6 @@ const PWD_DISPLAY = "/home/deshan";
 
 export default function Terminal({
   onFirstCommand,
-  blogRoute = false,
-  initialBlogSlug = null,
-  initialBlogPost = null,
   initialSection = null,
   initialCommand = null,
 }: TerminalProps) {
@@ -657,27 +632,9 @@ export default function Terminal({
   const savedInputRef = useRef<string>("");
   const terminalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const [blogPostsCache, setBlogPostsCache] = useState<BlogSearchPost[]>([]);
 
   const user = "deshan";
   const host = "portfolio";
-
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const res = await fetch("/api/blog");
-        if (!res.ok) return;
-        const data: { posts: BlogSearchPost[] } = await res.json();
-        if (!cancelled) setBlogPostsCache(data.posts ?? []);
-      } catch {
-        /* ignore */
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   // ============ AI Command Handler: shows user question (prompt) + AI response ============
   const handleAICommand = async (
@@ -756,54 +713,11 @@ export default function Terminal({
     }
   };
 
-  const redirectFromBlogRoute = (trimmedCmd: string): boolean => {
-    if (!blogRoute) return false;
-
-    const parts = trimmedCmd.split(/\s+/);
-    const commandName = parts[0]?.toLowerCase() ?? "";
-    const args = parts.slice(1);
-
-    if (commandName === "blog") {
-      const q = args.join(" ").trim();
-      if (q) {
-        router.push(`/?cmd=${encodeURIComponent(`blog ${q}`)}`);
-      } else {
-        router.push("/blog");
-      }
-      return true;
-    }
-
-    if (commandName === "cd" && args[0]?.toLowerCase() === "blog") {
-      router.push("/blog");
-      return true;
-    }
-
-    if (
-      commandName === "cd" &&
-      args[0] &&
-      HOME_CD_SECTIONS.includes(
-        args[0].toLowerCase() as (typeof HOME_CD_SECTIONS)[number]
-      )
-    ) {
-      const dir = args[0].toLowerCase();
-      router.push(dir === "welcome" ? "/" : `/?section=${dir}`);
-      return true;
-    }
-
-    router.push(`/?cmd=${encodeURIComponent(trimmedCmd)}`);
-    return true;
-  };
-
   const processCommand = async (
     cmd: string,
     isAuto: boolean = false
   ): Promise<void> => {
     const trimmedCmd = cmd.trim();
-
-    if (!isAuto && blogRoute && trimmedCmd) {
-      redirectFromBlogRoute(trimmedCmd);
-      return;
-    }
 
     const newHist: HistoryLine[] = [
       ...history,
@@ -869,10 +783,6 @@ export default function Terminal({
         return;
       }
       const dir = args[0].toLowerCase();
-      if (dir === "blog") {
-        router.push("/blog");
-        return;
-      }
       const sectionMap: Record<string, React.ReactNode> = {
         welcome: <Welcome />,
         about: <About />,
@@ -902,22 +812,6 @@ export default function Terminal({
     // clear — wipe the screen, no output line
     if (commandName === "clear") {
       setHistory([]);
-      return;
-    }
-
-    // blog — navigate to the blog index or render search results (side effects)
-    if (commandName === "blog") {
-      const query = args.join(" ").trim();
-      if (!query) {
-        router.push("/blog");
-        return;
-      }
-      const matches = searchBlogPosts(blogPostsCache, query);
-      newHist.push({
-        type: "output",
-        content: <BlogSearchResults posts={matches} query={query} />,
-      });
-      setHistory(newHist);
       return;
     }
 
@@ -1094,31 +988,6 @@ export default function Terminal({
       return;
     }
 
-    // Try blog title/slug search before "command not found"
-    if (blogPostsCache.length > 0 && trimmedCmd.length >= 2) {
-      const blogMatches = searchBlogPosts(blogPostsCache, trimmedCmd);
-      if (blogMatches.length > 0) {
-        newHist.push({
-          type: "output",
-          content: (
-            <div>
-              <p className="text-gray-400 font-mono text-sm mb-2">
-                No command &quot;{parts[0]}&quot; — blog posts matching &quot;
-                {trimmedCmd}&quot;:
-              </p>
-              <BlogSearchResults posts={blogMatches} query={trimmedCmd} />
-              <p className="text-gray-500 font-mono text-xs mt-2">
-                Tip: use <span className="text-green-400">blog {trimmedCmd}</span>{" "}
-                next time
-              </p>
-            </div>
-          ),
-        });
-        setHistory(newHist);
-        return;
-      }
-    }
-
     newHist.push({
       type: "output",
       content: (
@@ -1139,20 +1008,6 @@ export default function Terminal({
   };
 
   const handleNav = async (cmd: string): Promise<void> => {
-    if (blogRoute) {
-      if (cmd === "blog") {
-        router.push("/blog");
-        return;
-      }
-      const cdSections = ["about", "projects", "skills", "experience", "contact"];
-      if (cdSections.includes(cmd)) {
-        router.push(`/?section=${cmd}`);
-        return;
-      }
-      router.push(`/?cmd=${encodeURIComponent(cmd)}`);
-      return;
-    }
-
     const cdSections = ["about", "projects", "skills", "experience", "contact"];
     const commandToRun = cdSections.includes(cmd) ? `cd ${cmd}` : cmd;
     await processCommand(commandToRun);
@@ -1220,7 +1075,7 @@ export default function Terminal({
     }
     if (e.key === "Tab") {
       e.preventDefault();
-      const { matches, setLine } = getTabCompletion(input, blogPostsCache);
+      const { matches, setLine } = getTabCompletion(input);
       if (matches.length === 1) {
         setInput(setLine);
         setTabSuggestions(null);
@@ -1238,32 +1093,8 @@ export default function Terminal({
       inputRef.current?.focus();
     }
     setTimeout(() => {
-      if (blogRoute) {
-        setHistory([
-          { type: "prompt", command: "cd welcome" },
-          { type: "output", content: <Welcome /> },
-          { type: "prompt", command: "blog" },
-          {
-            type: "output",
-            content: (
-              <Blog
-                slug={initialBlogSlug}
-                initialPost={initialBlogPost}
-                syncUrls
-              />
-            ),
-          },
-        ]);
-        setIsFirstUserCommand(false);
-        return;
-      }
-
       const boot = async () => {
         if (initialSection) {
-          if (initialSection === "blog") {
-            router.replace("/blog", { scroll: false });
-            return;
-          }
           await processCommand(`cd ${initialSection}`, true);
           router.replace("/", { scroll: false });
         } else if (initialCommand) {
@@ -1282,12 +1113,6 @@ export default function Terminal({
     const el = terminalRef.current;
     if (!el) return;
     const id = requestAnimationFrame(() => {
-      const blogEl = el.querySelector(".terminal-blog");
-      if (blogEl && blogRoute) {
-        const top = (blogEl as HTMLElement).offsetTop - 8;
-        el.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-        return;
-      }
       const lastPromptIndex = history.map(l => l.type).lastIndexOf("prompt");
       if (lastPromptIndex >= 0) {
         const promptEl = el.querySelector(`#history-${lastPromptIndex}`);
@@ -1300,7 +1125,7 @@ export default function Terminal({
       el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
     });
     return () => cancelAnimationFrame(id);
-  }, [history, blogRoute]);
+  }, [history]);
 
   return (
     <div
@@ -1317,14 +1142,12 @@ export default function Terminal({
         </div>
         <nav className="terminal-nav" aria-label="Terminal navigation">
           {[
-            "help",
             "about",
             "projects",
             "skills",
             "experience",
             "contact",
             "clear",
-            "blog",
           ].map((cmd) => (
             <button
               key={cmd}

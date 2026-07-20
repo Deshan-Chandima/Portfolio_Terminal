@@ -24,7 +24,7 @@ export const projects: Project[] = [
     name: "Zandra Travellers ERP System",
     description:
       "A complete web-based Travel ERP Management System with frontend and backend integration, powered by a MySQL database. The system manages flight bookings, ticket and invoice generation, customer handling, and company income & expense tracking through a modern and responsive admin dashboard.",
-    imageUrl: "/images/Mirror.JPG",
+    imageUrl: "/images/admin zandra.png",
     liveUrl: "https://www.syntechcraft.com/projects",
     githubUrl: "https://github.com/Deshan-Chandima",
     tech: ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"],
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     name: "ISP Eye: Network Monitoring",
     description:
       "A comprehensive, end-to-end network monitoring and data engineering pipeline. It automatically runs in the background to log historical performance, detect network outages, and track real-time process-level bandwidth usage. Features a FastAPI backend, MySQL data storage, and a premium React dashboard for data visualization.",
-    imageUrl: "/images/isp eye.png",
+    imageUrl: "/images/isp-eye.png",
     liveUrl: "#",
     githubUrl: "https://github.com/Deshan-Chandima/ISP_EYE.git",
     tech: ["Python", "FastAPI", "React", "MySQL", "SQLAlchemy"],

@@ -23,8 +23,8 @@ export const metadata: Metadata = {
       : "https://www.github.com/Deshan-Chandima")
   ),
   icons: {
-    icon: "/images/Mirror.JPG",
-    apple: "/images/Mirror.JPG",
+    icon: "/images/logo_round.png",
+    apple: "/images/logo_round.png",
   },
   title: {
     default:
