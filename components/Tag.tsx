@@ -178,7 +178,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
       const imgTargetHeight = frontMappedHeight * 0.75; // Image takes top 75% of the card
 
       // 2. Draw Image (Object-fit: contain into the top area)
-      const img = deshanTexture.image;
+      const img = deshanTexture.image as HTMLImageElement;
       const imgAspect = img.width / img.height;
       const targetAspect = frontWidth / imgTargetHeight;
 

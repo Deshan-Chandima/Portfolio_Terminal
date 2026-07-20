@@ -115,14 +115,6 @@ export default function Home() {
       name: "Deshan Chandima",
       url: "https://www.github.com/Deshan-Chandima",
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://www.github.com/Deshan-Chandima/blog?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (
