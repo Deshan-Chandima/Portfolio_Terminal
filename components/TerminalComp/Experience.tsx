@@ -16,22 +16,25 @@ import {
 const Experience: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
+  const [duration, setDuration] = useState({
+    chatiTotal: "",
+    chatiIntern: "",
+    chatiJr: "",
+    promindsTotal: "",
+  });
+
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 0);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Computed once per mount — accurate to the day the user opens the page.
-  const duration = useMemo(() => {
     const now = new Date();
-    return {
+    setDuration({
       chatiTotal: durationLabel(CHATI_INTERN_START, now),
       chatiIntern: formatMonths(
         monthsBetween(CHATI_INTERN_START, CHATI_INTERN_END)
       ),
       chatiJr: durationLabel(CHATI_JR_START, now),
       promindsTotal: durationLabel(PROMINDS_START, now),
-    };
+    });
+    return () => clearTimeout(timer);
   }, []);
 
   return (
