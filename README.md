@@ -2,7 +2,7 @@
 
 A modern, interactive terminal-themed portfolio website built with Next.js 16, React 19, TypeScript, and Tailwind CSS. Features a unique terminal interface with matrix-style animations and AI-powered chat functionality.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-green.svg)](https://www.github.com/Deshan-Chandima/)
+[![Live Demo](https://img.shields.io/badge/demo-live-green.svg)](https://deshanportfolio.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.0-black)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2-blue)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
@@ -22,11 +22,7 @@ A modern, interactive terminal-themed portfolio website built with Next.js 16, R
 
 ## 🚀 Live Demo
 
-Visit the live site: [Your Vercel URL](https://www.github.com/Deshan-Chandima/)
-
-## 📸 Screenshots
-
-<!-- Add screenshots of your portfolio here -->
+Visit the live site: [deshanportfolio.vercel.app](https://deshanportfolio.vercel.app/)
 
 ## 🛠️ Tech Stack
 
@@ -266,8 +262,6 @@ vercel
 
 - **GitHub**: [@Deshan-Chandima](https://github.com/Deshan-Chandima)
 - **LinkedIn**: [Deshan Chandima](https://www.linkedin.com/in/DeshanChandima)
-- **Twitter/X**: [@DeshanChandima](https://x.com/DeshanChandima)
-- **YouTube**: [@morscode7](https://www.youtube.com/@morscode7)
 - **Email**: [deshan.c163@gmail.com](mailto:deshan.c163@gmail.com)
 
 ## 📝 License
