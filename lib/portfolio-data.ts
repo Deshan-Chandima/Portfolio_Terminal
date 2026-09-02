@@ -127,7 +127,7 @@ export const skillCommands: Record<keyof SkillsCategory, string> = {
 export const CONTACT_EMAIL = "deshan.c163@gmail.com";
 export const CONTACT_LOCATION = "Colombo, Sri Lanka";
 export const RESUME_URL =
-  "https://drive.google.com/uc?export=download&id=1YTcyCgirUAQoIo3uh5e2Tm2U1lEajg2r";
+  "https://drive.google.com/file/d/1vvLiZVUHd36t55T4ZQ9-eK2U-KDIYMnx/view?usp=sharing";
 
 // Icon rendering differs between the static page and the terminal pane, so each
 // side keys its own icon set off `name`; only the link metadata lives here.
