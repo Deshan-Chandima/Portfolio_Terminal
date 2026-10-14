@@ -7,13 +7,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.github.com/Deshan-Chandima"),
   title: "Projects | Software Developer Portfolio",
   description:
-    "Explore Deshan Chandima's portfolio of web applications including WhatsApp Campaign Management, AI-powered finance tracker, neural networks, and more. Built with TypeScript, Python, and modern web technologies. All projects are open-source and available on GitHub.",
+    "Explore Deshan Chandima's portfolio of web applications including Star Lights 3D Luxury Furniture, Zandra Travellers ERP, ISP Eye, and more. Built with TypeScript, React, Three.js, Node.js, and modern web technologies.",
   keywords: [
     "Software Developer Projects",
     "Developer Portfolio",
-    "WhatsApp Campaign Management",
-    "AI Finance Tracker",
-    "Neural Network Projects",
+    "Star Lights Furniture",
+    "3D E-Commerce Platform",
+    "Three.js E-Commerce",
+    "Zandra Travellers ERP",
+    "ISP Eye Network Monitoring",
     "Network Marketing Platform",
     "YouTube Backend Clone",
     "React TypeScript Projects",
@@ -41,7 +43,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "https://www.github.com/Deshan-Chandima/images/Mirror.JPG",
+        url: "https://www.github.com/Deshan-Chandima/images/New.jpeg",
         width: 1200,
         height: 630,
         alt: "Deshan Chandima - Software Developer Projects Portfolio",
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
     title: "Projects | Software Developer Portfolio",
     description:
       "Full-stack MERN projects, AI applications, and machine learning implementations. All projects open-source on GitHub.",
-    images: ["https://www.github.com/Deshan-Chandima/images/Mirror.JPG"],
+    images: ["https://www.github.com/Deshan-Chandima/images/New.jpeg"],
   },
   robots: {
     index: true,
