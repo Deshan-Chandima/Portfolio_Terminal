@@ -3,7 +3,6 @@ import {
   socialLinks as socialLinkData,
   CONTACT_EMAIL,
   CONTACT_LOCATION,
-  RESUME_URL,
 } from "@/lib/portfolio-data";
 
 // Type definitions
@@ -168,25 +167,6 @@ const LeetcodeIcon: React.FC = () => (
   </svg>
 );
 
-const ResumeIcon: React.FC = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="transition-all duration-300 group-hover:stroke-orange-400 group-hover:scale-110"
-    aria-hidden="true"
-  >
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-    <polyline points="7,10 12,15 17,10"></polyline>
-    <line x1="12" x2="12" y1="15" y2="3"></line>
-  </svg>
-);
 
 const DiscordIcon: React.FC = () => (
   <svg
@@ -405,45 +385,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Resume Button */}
-            <a
-              href={RESUME_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-3 sm:p-4 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl hover:bg-white/10 hover:border-orange-400/50 transition-all duration-300 cursor-pointer transform hover:scale-[1.02] hover:shadow-lg hover:shadow-orange-400/20 active:scale-[0.98] block"
-              aria-label="Download resume (opens in new tab)"
-            >
-              <div className="flex items-center">
-                <div className="p-2 bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-lg mr-3 sm:mr-4 group-hover:from-orange-400/30 group-hover:to-red-400/30 transition-all duration-300">
-                  <ResumeIcon />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-gray-400 text-xs sm:text-sm font-mono">
-                    RESUME
-                  </p>
-                  <p className="text-white font-mono text-sm sm:text-base group-hover:text-orange-400 transition-colors duration-300">
-                    Download CV
-                  </p>
-                </div>
-                <div
-                  className="text-gray-500 group-hover:text-orange-400 transition-colors duration-300 flex-shrink-0"
-                  aria-hidden="true"
-                >
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7,10 12,15 17,10"></polyline>
-                    <line x1="12" x2="12" y1="15" y2="3"></line>
-                  </svg>
-                </div>
-              </div>
-            </a>
+
           </section>
 
           {/* Social Links Section - Animated */}
