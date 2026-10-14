@@ -19,7 +19,7 @@ export const FILE_CONTENTS: Record<string, string> = {
   about:
     "About Deshan Chandima — Software Developer. Backend focus: RESTful APIs, MERN/TypeScript, JWT. Exploring AI/ML. Based in Bhubaneswar, India. Type 'cd about' to open the full section.",
   projects:
-    "Recent projects: WhatsApp Campaign Management, RukiAI, Digit Recognizer, AI Madness, and more. Type 'cd projects' to browse with links and descriptions.",
+    "Recent projects: Zandra Travellers ERP, Star Lights (PVT) LTD, ISP Eye, Paper Cloud.LK, and more. Type 'cd projects' to browse with links and descriptions.",
   skills:
     "Tech: Frontend — React, Next.js, Remix, TanStack Query. Backend — Node.js, Express, FastAPI. DBs — MongoDB, RabbitMQ, Redis, PostgreSQL. Tools — Git, Docker, Kubernetes, Postman, Linux/CLI. Deployment — AWS S3, Azure, GCP, Vercel, Render, Dokploy. AI/ML — Pandas, PyTorch, TensorFlow. Type 'cd skills' to see all.",
   experience:

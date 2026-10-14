@@ -30,6 +30,15 @@ export const projects: Project[] = [
     tech: ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"],
   },
   {
+    name: "Star Lights (PVT) LTD",
+    description:
+      "Star Lights (PVT) LTD is a bespoke luxury furniture e-commerce platform featuring real-time 3D customization with seamless frontend and backend connectivity to provide an immersive and reliable shopping experience. It comes equipped with a comprehensive admin dashboard for the efficient management of products, custom finishes, sizes, and customer orders. The platform ensures an intuitive and premium online shopping journey by offering interactive 3D design tools, dynamic cart management, and a streamlined checkout process.",
+    imageUrl: "/images/Starlight.png",
+    liveUrl: "https://starlightsfurniture.com/",
+    githubUrl: "#",
+    tech: ["React", "Three.js", "Node.js", "Express", "MySQL", "Tailwind CSS"],
+  },
+  {
     name: "ISP Eye: Network Monitoring",
     description:
       "A comprehensive, end-to-end network monitoring and data engineering pipeline. It automatically runs in the background to log historical performance, detect network outages, and track real-time process-level bandwidth usage. Features a FastAPI backend, MySQL data storage, and a premium React dashboard for data visualization.",
