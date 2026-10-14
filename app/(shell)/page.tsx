@@ -33,7 +33,7 @@ export default function Home() {
     jobTitle: "Software Developer",
     description:
       "Software developer specializing in full-stack development and Next.js with backend focus and machine learning exploration",
-    image: "https://www.github.com/Deshan-Chandima/images/Mirror.JPG",
+    image: "https://www.github.com/Deshan-Chandima/images/New.jpeg",
     email: "deshan.c163@gmail.com",
     address: {
       "@type": "PostalAddress",

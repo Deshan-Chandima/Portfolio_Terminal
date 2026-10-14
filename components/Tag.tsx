@@ -24,7 +24,7 @@ import "@/public/css/IdentityComp.css";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 useGLTF.preload("/models/card.glb");
-useTexture.preload("/images/Mirror.JPG");
+useTexture.preload("/images/New.jpeg");
 
 type LerpedBody = RapierRigidBody & { lerped?: THREE.Vector3 };
 
@@ -123,7 +123,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   };
   
   const { nodes, materials } = useGLTF("/models/card.glb") as unknown as GLTFCardResult;
-  const deshanTexture = useTexture("/images/Mirror.JPG");
+  const deshanTexture = useTexture("/images/New.jpeg");
 
   // Dynamically generate the lanyard stripe texture with "Deshan" text
   const lanyardTexture = useMemo(() => {

@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "https://www.github.com/Deshan-Chandima/images/Mirror.JPG",
+        url: "https://www.github.com/Deshan-Chandima/images/New.jpeg",
         width: 1200,
         height: 630,
         alt: "Deshan Chandima - Contact Software Developer",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "Contact | Get in Touch with Software Developer",
     description:
       "Connect with Deshan Chandima for project collaborations and development opportunities. Available for hire.",
-    images: ["https://www.github.com/Deshan-Chandima/images/Mirror.JPG"],
+    images: ["https://www.github.com/Deshan-Chandima/images/New.jpeg"],
   },
   robots: {
     index: true,
@@ -274,7 +274,7 @@ const structuredData = {
   "@type": "Person",
   name: "Deshan Chandima",
   url: "https://www.github.com/Deshan-Chandima",
-  image: "https://www.github.com/Deshan-Chandima/images/Mirror.JPG",
+  image: "https://www.github.com/Deshan-Chandima/images/New.jpeg",
   email: CONTACT_EMAIL,
   address: {
     "@type": "PostalAddress",
