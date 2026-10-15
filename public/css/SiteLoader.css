@@ -1,0 +1,452 @@
+/* ==========================================================================
+   SiteLoader.css — Cyberpunk / Terminal BIOS Bootloader Styling
+   ========================================================================== */
+
+.bootloader-overlay {
+  --loader-green: #22c55e;
+  --loader-green-glow: rgba(34, 197, 94, 0.6);
+  --loader-green-dim: #15803d;
+  --loader-cyan: #06b6d4;
+  --loader-amber: #f59e0b;
+  --loader-bg: #030704;
+  --loader-font: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "Liberation Mono", Monaco, "DejaVu Sans Mono", monospace;
+
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background-color: var(--loader-bg);
+  color: #d1fae5;
+  font-family: var(--loader-font);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  overflow: hidden;
+  user-select: none;
+  cursor: default;
+  transition: opacity 0.4s ease-out;
+}
+
+/* CRT Scanline Overlay */
+.bootloader-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 2px,
+    rgba(0, 0, 0, 0.35) 2px,
+    rgba(0, 0, 0, 0.35) 4px
+  );
+}
+
+/* CRT Radial Vignette & Phosphor Bloom */
+.bootloader-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 11;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(34, 197, 94, 0.03) 0%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
+}
+
+/* Moving Scanline Sweep Beam */
+.bootloader-scanbeam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(34, 197, 94, 0.15) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 12;
+  animation: scanbeam-sweep 4s linear infinite;
+}
+
+@keyframes scanbeam-sweep {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* CRT Screen Exit Animation */
+.bootloader-overlay.bootloader-exiting {
+  animation: crt-exit-fade 0.45s cubic-bezier(0.2, 0, 0, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes crt-exit-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1.2);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scaleY(0.005) scaleX(1.05);
+    filter: brightness(2.5);
+    background-color: #22c55e;
+  }
+  90% {
+    opacity: 0.4;
+    transform: scaleY(0.002) scaleX(0.4);
+    filter: brightness(3);
+    background-color: #ffffff;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+    filter: brightness(0);
+  }
+}
+
+/* Terminal Outer Border Frame */
+.bootloader-frame {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.1),
+    inset 0 0 20px rgba(34, 197, 94, 0.05);
+  background-color: rgba(6, 12, 8, 0.85);
+  backdrop-filter: blur(4px);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Top BIOS Title Bar */
+.bootloader-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  background-color: #0b150f;
+  border-bottom: 1px solid rgba(34, 197, 94, 0.3);
+  font-size: 0.8rem;
+  color: #86efac;
+}
+
+.bootloader-system-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.bootloader-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulse-dot 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
+}
+
+.bootloader-skip-btn {
+  background: transparent;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #86efac;
+  font-family: inherit;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.bootloader-skip-btn:hover {
+  background-color: rgba(34, 197, 94, 0.15);
+  border-color: #22c55e;
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.3);
+}
+
+.bootloader-skip-key {
+  background-color: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.5);
+  padding: 0 0.25rem;
+  border-radius: 2px;
+  font-size: 0.7rem;
+}
+
+/* Terminal Content Window */
+.bootloader-content {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  gap: 1rem;
+}
+
+/* ASCII Banner */
+.bootloader-banner {
+  margin: 0;
+  font-size: clamp(0.55rem, 1.6vw, 0.85rem);
+  line-height: 1.15;
+  color: #22c55e;
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
+  white-space: pre;
+  font-weight: bold;
+}
+
+.bootloader-bios-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  border-bottom: 1px dashed rgba(34, 197, 94, 0.2);
+  padding-bottom: 0.75rem;
+}
+
+.bootloader-bios-meta span {
+  color: #22c55e;
+}
+
+/* Boot Diagnostic Logs */
+.bootloader-logs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+  flex: 1;
+}
+
+.bootloader-log-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.4;
+  animation: log-fade-in 0.15s ease-out;
+}
+
+@keyframes log-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.bootloader-log-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #cbd5e1;
+}
+
+.bootloader-log-time {
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.bootloader-log-label {
+  color: #a3e635;
+}
+
+.bootloader-badge {
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+.bootloader-badge-ok {
+  color: #22c55e;
+  background-color: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  text-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
+}
+
+.bootloader-badge-active {
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+/* Progress Section */
+.bootloader-progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 0 0.25rem;
+  border-top: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.bootloader-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+}
+
+.bootloader-progress-title {
+  color: #86efac;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.bootloader-progress-percent {
+  color: #22c55e;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+}
+
+.bootloader-bar-track {
+  width: 100%;
+  height: 14px;
+  background-color: #0d1a12;
+  border: 1px solid #1a4d2e;
+  border-radius: 2px;
+  padding: 2px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.bootloader-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #15803d 0%, #22c55e 60%, #4ade80 100%);
+  border-radius: 1px;
+  transition: width 0.12s linear;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+  position: relative;
+}
+
+.bootloader-bar-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  background: #ffffff;
+  opacity: 0.6;
+  filter: blur(2px);
+}
+
+.bootloader-ascii-bar {
+  font-size: 0.72rem;
+  color: #22c55e;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bootloader-current-task {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.bootloader-caret {
+  display: inline-block;
+  width: 8px;
+  height: 12px;
+  background-color: #22c55e;
+  animation: blink-cursor 0.7s infinite;
+}
+
+/* Bottom Bar */
+.bootloader-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #0b150f;
+  border-top: 1px solid rgba(34, 197, 94, 0.2);
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.bootloader-footer-quote {
+  color: #4ade80;
+  font-style: italic;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .bootloader-scanbeam {
+    animation: none;
+    display: none;
+  }
+  .bootloader-overlay.bootloader-exiting {
+    animation: none;
+    opacity: 0;
+  }
+  .bootloader-bar-fill {
+    transition: none;
+  }
+}
+
+/* Responsive Styles for Mobile */
+@media screen and (max-width: 640px) {
+  .bootloader-overlay {
+    padding: 0.5rem;
+  }
+  .bootloader-content {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+  .bootloader-banner {
+    font-size: clamp(0.42rem, 2.2vw, 0.65rem);
+    line-height: 1.1;
+  }
+  .bootloader-log-line {
+    font-size: 0.72rem;
+  }
+  .bootloader-log-time {
+    display: none;
+  }
+  .bootloader-footer-quote {
+    display: none;
+  }
+}

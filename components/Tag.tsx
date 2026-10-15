@@ -1,7 +1,7 @@
 "use client";
 
 import * as THREE from "three";
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef, useState, useMemo, Suspense } from "react";
 import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
 import type { ThreeEvent } from "@react-three/fiber";
 import {
@@ -51,7 +51,9 @@ export default function Tag() {
       >
         <ambientLight intensity={5} />
         <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
-          <Band />
+          <Suspense fallback={null}>
+            <Band />
+          </Suspense>
         </Physics>
       <Environment environmentIntensity={0} background={false}>
         <Lightformer

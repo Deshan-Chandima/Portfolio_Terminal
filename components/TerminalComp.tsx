@@ -322,6 +322,7 @@ const HELP_ITEMS: HelpItem[] = [
   { type: "command", command: "git [status|log]", description: "Show repository status." },
   { type: "command", command: "node/npm/python", description: "Print tool versions." },
   { type: "command", command: "sl", description: "Steam locomotive (for ls typos)." },
+  { type: "command", command: "reboot / boot", description: "Replay the system BIOS bootloader." },
 ];
 
 const WELCOME_LINES: string[] = [
@@ -399,6 +400,8 @@ const TAB_COMPLETIONS: string[] = [
   "which",
   "whatis",
   "sl",
+  "boot",
+  "reboot",
 ];
 
 // Command names for first-word completion and man
@@ -463,6 +466,7 @@ const COMMAND_NAMES = [
   "rmdir",
   "mv",
   "cp",
+  "boot",
   "reboot",
   "shutdown",
   "poweroff",
@@ -966,8 +970,18 @@ export default function Terminal({
       rm: readOnlyFs("rm"),
       rmdir: readOnlyFs("rmdir"),
       mv: readOnlyFs("mv"),
-      cp: readOnlyFs("cp"),
-      reboot: notPermitted("reboot"),
+      reboot: () => {
+        if (typeof window !== "undefined") {
+          window.dispatchEvent(new CustomEvent("portfolio:reboot"));
+        }
+        return "Initiating system reboot...";
+      },
+      boot: () => {
+        if (typeof window !== "undefined") {
+          window.dispatchEvent(new CustomEvent("portfolio:reboot"));
+        }
+        return "Reloading system boot sequence...";
+      },
       shutdown: notPermitted("shutdown"),
       poweroff: notPermitted("poweroff"),
       halt: notPermitted("halt"),
