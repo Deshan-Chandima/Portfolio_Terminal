@@ -171,7 +171,8 @@ export const MAN_PAGES: Record<string, string> = {
   python: "python [ --version ] — The Python interpreter.",
   python3: "python3 [ --version ] — The Python 3 interpreter.",
   sl: "sl — Steam Locomotive. For when you mistype 'ls'.",
-  reboot: "reboot — Reboot the machine.",
+  boot: "boot — Replay system BIOS bootloader sequence.",
+  reboot: "reboot — Reboot system and replay bootloader sequence.",
   shutdown: "shutdown — Power off the machine.",
   poweroff: "poweroff — Power off the machine.",
 };

@@ -1,6 +1,7 @@
 /* === Global Styles === */
 
 @import "tailwindcss";
+@import "../public/css/SiteLoader.css";
 
 body,
 html {
