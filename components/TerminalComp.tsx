@@ -325,14 +325,16 @@ const HELP_ITEMS: HelpItem[] = [
   { type: "command", command: "reboot / boot", description: "Replay the system BIOS bootloader." },
 ];
 
+const WELCOME_BANNER = [
+  "  ██████╗ ███████╗███████╗██╗  ██╗ █████╗ ███╗   ██╗",
+  "  ██╔══██╗██╔════╝██╔════╝██║  ██║██╔══██╗████╗  ██║",
+  "  ██║  ██║█████╗  ███████╗███████║███████║██╔██╗ ██║",
+  "  ██║  ██║██╔══╝  ╚════██║██╔══██║██╔══██║██║╚██╗██║",
+  "  ██████╔╝███████╗███████║██║  ██║██║  ██║██║ ╚████║",
+  "  ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝",
+].join("\n");
+
 const WELCOME_LINES: string[] = [
-  "=======================================================================",
-  "  ____            _                   ",
-  " |  _ \\ ___  ___| |__   __ _ _ __   ",
-  " | | | / _ \\/ __| '_ \\ / _` | '_ \\  ",
-  " | |_| \\___/\\___|_| |_|\\__,_|_| |_| ",
-  "                                      ",
-  "=======================================================================",
   "Hi, I'm Deshan Chandima, a Software Developer.",
   "Welcome to my interactive portfolio terminal!",
   "",
@@ -600,15 +602,20 @@ const Welcome: React.FC = () => {
         setDisplayedLines((prev) => [...prev, WELCOME_LINES[currentLine]]);
         setCurrentLine(currentLine + 1);
       }
-    }, 400);
+    }, 180);
     return () => clearTimeout(timer);
   }, [currentLine]);
 
   return (
-    <div role="region" aria-label="Welcome message">
+    <div role="region" aria-label="Welcome message" className="welcome-container">
+      <div className="welcome-divider">=======================================================================</div>
+      <pre className="welcome-ascii-banner" aria-label="Deshan Chandima logo">
+        {WELCOME_BANNER}
+      </pre>
+      <div className="welcome-divider">=======================================================================</div>
       {displayedLines.map((line, i) => (
         <OutputLine key={i}>
-          <TypewriterText text={line} speed={20} />
+          <TypewriterText text={line} speed={15} />
         </OutputLine>
       ))}
     </div>
